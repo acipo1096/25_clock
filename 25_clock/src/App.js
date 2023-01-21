@@ -72,18 +72,13 @@ const App = () =>  {
                 </div>
                 <div id="timer-options">
                     <div id="start_stop"><i className="fa-solid fa-play" onClick={function decrementSession(){
-                            setSessionMinutes(prevState => prevState - 1)
-                            setSessionSeconds(59);
-                            decrementSeconds();
-                              function decrementSeconds(){
-                                setTimeout(function() {
-                                  setSessionSeconds(setSessionSeconds => setSessionSeconds - 1)
-                                  decrementSeconds();
-                                  if(setSessionSeconds > 10) {
-                                    return sessionSeconds;
-                                  }
-                              }, 1000)
-                            }
+                          setSessionMinutes(prevState => prevState - 1)
+                          console.log(sessionMinutes)
+                          setSessionSeconds(59);
+                          console.log(sessionSeconds)
+                          while(sessionSeconds > 0) {
+                            console.log(sessionSeconds)
+                          }
                           }
                     }>{playPause}</i></div>
                     <div id="reset"><i className="fas fa-undo"><FontAwesomeIcon icon={faUndo} /></i></div>
