@@ -1,20 +1,29 @@
 import React, {useState, useEffect} from 'react';
-import App from '../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown, faPlay, faUndo, faPause } from '@fortawesome/free-solid-svg-icons'
 
 
-const SessionTimer = (props) => {
-    const [sessionTime, setSessionTime] = useState(25);
-    // const [breakTime, setBreakTime] = useState(5);
-    // console.log(minutes);
-//     let sessionMinutes = 25;
-//     let sessionSeconds = 0;
-//     setTimeout(function() {
-//         sessionMinutes--;
-//         SessionTimer();
-// }, 1000);
-return sessionTime;
+const SessionTimer = () => {
+    const [sessionMinutes, setSessionMinutes] = useState(25);
+    const [sessionSeconds, setSessionSeconds] = useState(0);
+
+
+    return(
+        <>
+            <div id="session-block">        
+                <p id="session-label">Session Length</p>
+                    <div id="session-counter">
+                    <div className="expand"><i id="session-increment" onClick={
+                        ()=>{
+                            setSessionMinutes(sessionMinutes + 1);
+                        }
+                    }><FontAwesomeIcon icon={faArrowUp} /></i></div>
+                        <div id="session-length" className="expand">{sessionMinutes}:0{sessionSeconds}</div>
+                        <div className="expand"><i id="session-decrement"><FontAwesomeIcon icon={faArrowDown} /></i></div>
+                    </div>
+            </div>
+        </>
+    )
 }
 
 export default SessionTimer;
