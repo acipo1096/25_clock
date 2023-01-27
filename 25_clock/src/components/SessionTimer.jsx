@@ -40,7 +40,6 @@ const SessionTimer = () => {
         let interval = null;
         if(isActive && nextSecond >= 10){
             interval = setInterval(()=>{
-                console.log(nextSecond)
                 setSessionSeconds(nextSecond);
                 timeLeft.innerText = `${nextMinute}:${nextSecond}`;
             },1000);
@@ -48,12 +47,11 @@ const SessionTimer = () => {
             interval = setInterval(()=>{
                 console.log(nextMinute)
                 setSessionSeconds(nextSecond);
-                timeLeft.innerText = `${sessionMinutes}:0${nextSecond}`;
-                console.log(nextSecond)
+                timeLeft.innerText = `${nextMinute}:0${nextSecond}`;
             },1000);
         } else if(isActive && nextSecond === -1) {
             console.log(nextSecond)
-            if (nextMinute !== -1) {
+            if (nextMinute > 0 ) {
                 setSessionMinutes(nextMinute)
                 setSessionSeconds(nextSecond + 61);
             } else {
