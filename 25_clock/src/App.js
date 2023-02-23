@@ -2,7 +2,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import SessionTimer from './components/SessionTimer';
-import BreakTimer from './components/BreakTimer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown, faPlay, faUndo, faPause } from '@fortawesome/free-solid-svg-icons'
 
