@@ -6,14 +6,24 @@
 #blocks {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 #session-block {
   padding-right: 75px;
 }
 
+#session-counter {
+  display: flex;
+}
+
 #break-block {
   padding-left: 75px;
+}
+
+#break-counter {
+  display: flex;
 }
 
 body {
@@ -59,8 +69,4 @@ body {
 .expand {
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#session-counter {
-  display: flex;
 }
